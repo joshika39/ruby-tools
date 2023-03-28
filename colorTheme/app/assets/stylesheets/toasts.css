@@ -1,0 +1,50 @@
+.toasts{
+    position: absolute;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    bottom: 0;
+}
+
+.toasts > * {
+    flex: 1;
+}
+
+.toast{
+    margin: .5rem;
+    border-radius: .7rem;
+    padding: 1rem;
+}
+
+.toast .title{
+    margin-bottom: .5rem;
+    font-weight: bolder;
+}
+
+.toast p {
+    margin-bottom: .5rem;
+}
+
+.toast.success{
+    background: var(--success-1);
+    color: var(--success-8);
+    border: var(--success-5) solid 2px;
+}
+
+.toast.info{
+    background: var(--info-1);
+    color: var(--info-6);
+    border: var(--info-5) solid 2px;
+}
+
+.toast.error{
+    background: var(--error-1);
+    color: var(--error-6);
+    border: var(--error-5) solid 2px;
+}
+
+.toast.warning{
+    background: var(--warning-1);
+    color: var(--warning-8);
+    border: var(--warning-5) solid 2px;
+}

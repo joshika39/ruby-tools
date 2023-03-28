@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <%= form_with url: home_set_session_path, method: :post do |form| %>
+    <%=
+      if session[:theme]
+        form.color_field :favorite_color, value: session[:theme]
+      else
+        form.color_field :favorite_color, value: "#FFFFFF"
+      end
+    %>
+    <%= form.submit "Select" %>
+  <% end %>
+
+  <div class="colors">
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--c1-accent-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--base-accent-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--c2-accent-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--info-#{a}" %>
+        <span class="color-placeholder"  style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--success-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--warning-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+
+    <div class="color-set">
+      <% (1..9).each { |a| %>
+        <% color_id = "--error-#{a}" %>
+        <span class="color-placeholder" style="background: var(<%= color_id %>)"></span>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="sample-wrapper">
+    <div class="light sample">
+      <h1>Header 1</h1>
+      <h2>Header 2</h2>
+      <button>Click Me!</button>
+      <a href="#">Link</a>
+    </div>
+    <div class="dark sample">
+      <h1>Header 1</h1>
+      <h2>Header 2</h2>
+      <button>Click Me!</button>
+      <a href="#">Link</a>
+    </div>
+  </div>
+</div>
+
+<div class="toasts">
+  <div class="toast info">
+    <p class="title">This is a sample Warning.</p>
+    <p>This is the content of an warning box. </p>
+  </div>
+
+  <div class="toast success">
+    <p class="title">This is a sample Warning.</p>
+    <p>This is the content of an warning box. </p>
+  </div>
+
+  <div class="toast warning">
+    <p class="title">This is a sample Warning.</p>
+    <p>This is the content of an warning box. </p>
+  </div>
+
+  <div class="toast error">
+    <p class="title">This is a sample Error.</p>
+    <p>This is the content of an error box. </p>
+  </div>
+</div>

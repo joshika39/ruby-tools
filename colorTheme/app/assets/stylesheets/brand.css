@@ -1,0 +1,101 @@
+:root {
+    /* BASE COLORS */
+    --dark-bg: #2B2B2B;
+    --light-bg: #fafafa;
+
+    --primary: var(--base);
+    --accent-1: var(--color-1);
+    --accent-1-s: var(--color-2);
+    --accent-2: var(--color-1);
+    --accent-2-s: var(--color-2);
+
+    --on-dark-bg: var(--accent-1);
+    --on-light-bg: var(--accent-1-s);
+
+    --on-accent-1: var(--accent-1-s);
+    --on-primary: var(--accent-1);
+}
+
+.color-placeholder {
+    width: 3rem;
+    height: 1.5rem;
+    box-sizing: border-box;
+    align-content: center;
+    text-align: center;
+    display: grid;
+    font-weight: bold;
+    font-size: .5em;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+form {
+    height: 5vh;
+    /*flex*/
+    background: #f6f5f5;
+    padding: .5rem;
+    display: flex;
+    align-content: center;
+    gap: .3rem;
+    border-radius: .5rem;
+    border: var(--accent-2) 2px solid;
+    justify-content: center;
+    vertical-align: center;
+}
+
+.sample-wrapper{
+    display: flex;
+    height: -webkit-fill-available;
+}
+
+.sample-wrapper > *{
+    flex: 1;
+}
+
+.colors{
+    display: flex;
+    justify-content: center;
+    gap: .3rem;
+    margin: 1rem;
+}
+
+.sep{
+    width: 0;
+    height: 0;
+    margin: .5rem;
+}
+.light{
+    background: var(--light-bg);
+    color: var(--base-accent-5);
+}
+
+.dark{
+    background: var(--dark-bg);
+    color: var(--base-accent-5);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #999999;
+    font-size: 1.2em;
+}
+
+input {
+    height: 1.5rem;
+    padding-inline: .4rem;
+    align-self: center;
+
+}
+
+input[type="color"] {
+    width: 4rem;
+    height: 1.5rem;
+}

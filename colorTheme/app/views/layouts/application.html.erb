@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colors</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+<style>
+    :root {
+    <% @c1_accents.each_with_index do |color, index|%>
+        --c1-accent-<%= index + 1 %>: <%= color %>;
+    <% end %>
+
+    <% @c2_accents.each_with_index do |color, index|%>
+        --c2-accent-<%= index + 1 %>: <%= color %>;
+    <% end %>
+
+    <% @base_accents.each_with_index do |color, index|%>
+            --base-accent-<%= index + 1 %>: <%= rgb_to_hex(hsv_to_rgb(color)) %>;
+    <% end %>
+
+    <% @info_accents.each_with_index do |info, index|%>
+        --info-<%= index + 1 %>: <%= info %>;
+    <% end %>
+
+    <% @success_accents.each_with_index do |success, index|%>
+        --success-<%= index + 1 %>: <%= rgb_to_hex(hsv_to_rgb(success)) %>;
+    <% end %>
+
+    <% @warning_accents.each_with_index do | warn, index|%>
+        --warning-<%= index + 1 %>: <%= warn %>;
+    <% end %>
+
+    <% @error_accents.each_with_index do |color, index|%>
+        --error-<%= index + 1 %>: <%= rgb_to_hex(hsv_to_rgb(color)) %>;
+    <% end %>
+    }
+</style>
+<%= yield %>
+</body>
+</html>
